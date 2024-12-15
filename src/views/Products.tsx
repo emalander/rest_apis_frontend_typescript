@@ -1,15 +1,8 @@
 import {ActionFunctionArgs, Link, useLoaderData} from 'react-router-dom'
-import { getProducts, updateProduct, updateProductAvailability } from '../services/ProductService'
+import { getProducts, updateProductAvailability } from '../services/ProductService'
 import ProductDetails from '../components/ProductDetails';
 import { Product } from '../types';
 
-
-const arrayTest: Object[] = [ 
-  {id: 12, name: 'Silla Gamer 01', price: 130099, availability: true},
-  {id: 21, name: 'Silla Gamer 02', price: 230099, availability: true},
-  {id: 31, name: 'Silla Gamer 03', price: 330099, availability: true},
-  {id: 42, name: 'Silla Gamer 04', price: 430099, availability: true}
-]
 export async function loader() {
 
   const products = await getProducts()

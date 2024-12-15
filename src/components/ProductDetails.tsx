@@ -1,6 +1,6 @@
 
 import { Product } from "../types"
-import { ActionFunctionArgs, Form, Link, useNavigate, redirect, useFetcher } from "react-router-dom"
+import { ActionFunctionArgs, Form, useNavigate, redirect, useFetcher } from "react-router-dom"
 import { formatCurrency } from "../utils"
 import { deleteProduct } from "../services/ProductService"
 import cubito from '../assets/cubo_002d.svg'
