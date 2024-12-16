@@ -47,7 +47,7 @@ export default function Products() {
                 product={product}
               />
             )) }*/}
-            {productsLoaded.map(item => (
+            {productsLoaded?.map(item => (
               <ProductDetails
               key={item.id}
               product={item}
