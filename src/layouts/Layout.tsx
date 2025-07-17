@@ -1,5 +1,6 @@
-import {Outlet} from 'react-router-dom'
-import cubito from '../assets/cubo_002d.svg'
+
+import {Outlet} from 'react-router-dom';
+import cubito from '../assets/cubo_002d.svg';
 
 export default function Layout() {
   return (
