@@ -5,7 +5,6 @@ import { ActionFunctionArgs, Form, useNavigate, redirect, useFetcher } from "rea
 import { formatCurrency } from "../utils"
 import { deleteProduct } from "../services/ProductService"
 import EditIcon from '@mui/icons-material/Edit';
-import cubito from '../assets/cubo_002d.svg'
 import DeleteIcon from '@mui/icons-material/Delete';
 
 type ProductDetailsProps = {

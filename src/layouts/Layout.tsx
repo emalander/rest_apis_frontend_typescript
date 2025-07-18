@@ -1,7 +1,5 @@
 
 import {Outlet} from 'react-router-dom';
-import cubito from '../assets/cubo_002d.svg';
-import trama_1 from '../assets/low-poly-grid-haikei.png';
 
 export default function Layout() {
   return (
