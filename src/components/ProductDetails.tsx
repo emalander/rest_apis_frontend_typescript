@@ -1,9 +1,12 @@
 
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import { Product } from "../types"
 import { ActionFunctionArgs, Form, useNavigate, redirect, useFetcher } from "react-router-dom"
 import { formatCurrency } from "../utils"
 import { deleteProduct } from "../services/ProductService"
+import EditIcon from '@mui/icons-material/Edit';
 import cubito from '../assets/cubo_002d.svg'
+import DeleteIcon from '@mui/icons-material/Delete';
 
 type ProductDetailsProps = {
   product:Product
@@ -30,7 +33,12 @@ export default function ProductDetails({product} : ProductDetailsProps) {
     <tr className="border-b">
         <td className="p-1 text-xs text-gray-800">
           <div className="flex justify-center items-center">
-            <img src={cubito} alt="Logo" width="100" height="100"/>
+            <div className="flex justify-center items-center">
+              <LocalShippingIcon
+                className="text-blue-500" // Clases de Tailwind para color
+                fontSize="medium"         // Propiedad de MUI para el tamaño
+              />
+            </div>
           </div>
         </td>
         <td className="p-3 text-lg text-gray-800 text-center">
@@ -38,6 +46,9 @@ export default function ProductDetails({product} : ProductDetailsProps) {
         </td>
         <td className="p-3 text-lg text-gray-800 text-center">
           {formatCurrency(product.price)}
+        </td>
+        <td className="p-3 text-lg text-gray-800 text-center">
+          {product.stock}
         </td>
         <td className="p-3 text-lg text-gray-700">
           <fetcher.Form method='POST'>
@@ -54,16 +65,11 @@ export default function ProductDetails({product} : ProductDetailsProps) {
         </td>
         <td className="p-3 text-lg text-gray-800 ">
            <div className="flex gap-2 items-center">
-             {/* <Link   // Link version
-                to= {`/productos/${product.id}/editar`}
-                className="bg-indigo-600 text-white rounded-lg w-full p-2 uppercase font-bold text-xs text-center">
-                Editar
-              </Link>*/}
-              <button   // navigate version
-                onClick= {()=> navigate(`/productos/${product.id}/editar`)}
-                className="bg-indigo-600 text-white rounded-lg w-full p-2 uppercase font-bold text-xs text-center hover:bg-indigo-500 drop-shadow-md">
-                Editar
-              </button>
+              <EditIcon
+                className="text-blue-500 hover:text-blue-600 cursor-pointer" // Clases de Tailwind para color
+                fontSize="medium"
+                onClick= {()=> navigate(`/productos/${product.id}/editar`)}         // Propiedad de MUI para el tamaño
+              />
               <Form 
                 className="w-full"
                 method="POST"
@@ -75,11 +81,13 @@ export default function ProductDetails({product} : ProductDetailsProps) {
                   }
                 }
               >
-                <input
+                <button
                   type='submit'
                   value='Eliminar'
-                  className="bg-red-500 hover:bg-red-600 cursor-pointer text-white rounded-lg w-full p-2 uppercase font-bold text-xs text-center drop-shadow-md"
-                />
+                  >
+                  <DeleteIcon fontSize="medium" className="text-red-500 hover:text-red-600 cursor-pointer" />
+                </button>
+                
               </Form>
            </div>
         </td>

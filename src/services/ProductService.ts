@@ -96,13 +96,14 @@ export async function deleteProduct(id:Product['id']) {
 }
 
 
-export async function updateProductAvailability(id:Product['id']) {
+export async function updateProductAvailability(id:Product['id'], isAvailable: boolean) {
   try {
 
     const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`
-    await axios.patch(url)
+    await axios.patch(url, { isAvailable })
 
   } catch (error) {
     console.log(error)
+    throw error; 
   }
 }

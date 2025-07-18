@@ -1,21 +1,21 @@
 
 import {Outlet} from 'react-router-dom';
 import cubito from '../assets/cubo_002d.svg';
+import trama_1 from '../assets/low-poly-grid-haikei.png';
 
 export default function Layout() {
   return (
     <>
-      <header className='bg-slate-800 bg-gradient-to-r  from-slate-900 via-slate-800 to-slate-500'>
-        <div className='mx-auto max-w-6xl py-4'>
-          <div className="flex items-center">
-            <div className="py-4">
-              <h1 className='text-2xl font-bold text-slate-200'>
-                Administrador de Productos
-              </h1>
-            </div>
-            <div className="py-4">
-              <img src={cubito} alt="Logo" width="100" height="100"/>
-            </div>
+      <header className={`
+        bg-slate-700
+        header-with-background
+      `}>
+        <div className='max-w-6xl mx-auto'>
+          <div className="flex items-center gap-x-4 " >
+            
+            <h1 className='text-2xl font-bold text-slate-800 bg-[#60A5FA] py-2 px-4 mt-4 rounded-t-md'>
+              Administrador de Productos
+            </h1>
           </div>
         </div>
       </header>

@@ -8,3 +8,10 @@ html, body {
     /*background-color: #649bf3*/;
     background: linear-gradient(45deg, rgba(77,71,84,1) 0%, rgba(100,155,243,1) 35%, rgba(213,202,216,1) 100%);
 } 
+
+.header-with-background {
+  background-image: url('./assets/low-poly-grid-haikei.png'), linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  background-repeat: repeat, no-repeat; /* La imagen se repite, el degradado no */
+  background-position: center; /* Ajusta la posición si es necesario */
+  background-size: auto, cover;
+}

@@ -25,28 +25,23 @@ export default function Products() {
     <>
       <div className='flex justify-between'>
         <h2 className='text-3xl font-black text-slate-800'>Productos</h2>
-        <Link to="productos/nuevo" className='rounded-md bg-indigo-600 p-3 text-sm font-bold text-white shadow-sm hover:bg-indigo-400'>
+        <Link to="productos/nuevo" className='rounded-md bg-slate-900 p-3 text-sm font-bold text-white shadow-sm hover:bg-indigo-400'>
           Agregar Producto
         </Link>
       </div>
-      <div className="p-2">
+      <div className="p-1">
         <table className="w-full mt-5 table-auto">
           <thead className="bg-slate-800 text-white">
               <tr>
                   <th className="p-2 bg-slate-600">Envio</th>
                   <th className="p-2 bg-slate-900">Producto</th>
                   <th className="p-2 bg-slate-800">Precio</th>
+                  <th className="p-2 bg-slate-500">Stock</th>
                   <th className="p-2 bg-slate-900">Disponibilidad</th>
                   <th className="p-2 bg-slate-800">Acciones</th>
               </tr>
           </thead>
           <tbody>
-            {/*{productsLoaded.map(product => (
-              <ProductDetails
-                key={product.id}
-                product={product}
-              />
-            )) }*/}
             {productsLoaded?.map(item => (
               <ProductDetails
               key={item.id}
